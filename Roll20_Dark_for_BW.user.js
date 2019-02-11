@@ -1,17 +1,22 @@
 // ==UserScript==
-// @name          Roll20 Dark
+// @name          Roll20 Dark for BW
 // @namespace     https://openuserjs.org/scripts/RedReign/Roll20_Dark
 // @description	  A dark theme for Roll20.net.
-// @author        RedReign
+// @author        RedReign & Mandrilletje
 // @include       https://app.roll20.net/editor*
 // @include       https://app.roll20.net/campaigns/chatarchive*
 // @run-at        document-start
-// @version       2018.12.11.1
+// @version       2019.2.11.1
 // @license       GPL-3.0-or-later
 // ==/UserScript==
 (function() {var css =`
 body {
     background:url(http://subtlepatterns.com/patterns/dark_leather.png)!important;
+}
+
+.ui-dialog .characterdialog.ui-dialog-content {
+background: url(https://i.imgur.com/AFq4a7y.png) no-repeat !important;
+background-size: 100% !important;
 }
 
 #floatingtoolbar, #floatinglayerbar {
@@ -119,7 +124,7 @@ background-color: #282150 !important;
 }
 
 .ui-widget-content {
-	color:hsl(0,0%,75%)!important;
+	color:hsl(0,0%,65%)!important;
 	border:1px solid black!important;
 	background:hsl(0,0%,10%)!important;
 }
@@ -275,15 +280,24 @@ background-image: none !important;
 	color:hsl(0,0%,100%)!important;
 }
 
-textarea,select,input,table,
+textarea,select,input,
 .ui-dialog .btn:not(.sheet-wrapper-button),
 #textchat-input .btn,
 #rightsidebar .btn,
 .tokenactions .btn,
 .ui-dialog-content .ui-dialog-buttonset > button {
 	 background-color:hsl(0,0%,10%)!important;
-	 color:hsl(0,0%,75%)!important;
+	 color:hsl(40,100%,65%)!important;
 	 border-color:black!important;
+}
+
+table, td {
+background-color: #1a1a1a !important;
+}
+
+.dialog.largedialog.handoutviewer {
+padding-top: 20px;
+background: url(https://i.imgur.com/4VCCNz3.png) no-repeat;
 }
 
 .ui-dialog-buttonset button {
@@ -298,7 +312,11 @@ textarea,select,input,table,
 .r20es-dialog .btn:hover,
 .ui-dialog-buttonset button:hover {
 	background-color:hsl(0,0%,20%)!important;
-	color:hsl(0,0%,100%)!important;
+	color:hsl(0,0%,40%)!important;
+}
+
+.textchatcontainer .inlinerollresult {
+background-color: transparent !important;
 }
 
 .diceroll .didroll {
@@ -346,6 +364,58 @@ textarea,select,input,table,
 	color:hsl(0,0%,75%)!important;
 }
 
+th {
+color:hsl(40,100%,65%)!important;
+}
+
+h1 {
+padding-top:12px !important;
+font-size:26px !important;
+line-height: 54px !important;
+color:#e65900 !important;
+text-align: left !important;
+font-family: Georgia, serif !important;
+font-weight: lighter !important;
+}
+
+.sheet-pagelabel {
+padding-top:12px !important;
+font-size:16px !important;
+line-height: 54px !important;
+color:#e65900 !important;
+font-family: Georgia, serif !important;
+font-weight: lighter !important;
+}
+
+.sheet-header {
+font-size:20px !important;
+color:#e65900 !important;
+font-family: Georgia, serif !important;
+font-weight: lighter !important;
+}
+
+
+
+.charsheet .sheet-pages:checked + span.sheet-pagelabel {
+color:hsl(40,100%,65%)!important;
+background-color: #0A1117!important;
+}
+
+
+h2 {
+
+}
+
+h3 {
+font-size:13px !important;
+font-style: italic;
+font-weight: normal !important;
+}
+
+.sheet-statname {
+color:hsl(40,100%,85%)!important;
+}
+
 hr {
 	border-color:hsl(0,0%,15%)!important;
 }
@@ -374,29 +444,32 @@ hr {
 }
 
 #textchat .inlinerollresult {
-	background-color: hsl(0, 0%, 10%) !important;
-	border: 2px solid hsl(50, 30%, 30%) !important;
+	background-color: none !important;
+    text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;
+	border: 0px !important;
 	color:hsl(0,0%,90%) !important;
 }
 
 #textchat .inlinerollresult.importantroll {
-	border: 2px solid hsl(240, 100%, 65%) !important;
+    text-shadow: -2px 0 4px hsl(40,100%,45%), 0 2px 4px hsl(40,100%,45%), 2px 0 4px hsl(40,100%,45%), 0 -2px 4px hsl(40,100%,45%);
 }
 
 #textchat .inlinerollresult.fullcrit {
-	border: 2px solid hsl(104, 79%, 39%) !important;
+color: hsl(100,100%,80%) !important;
+    text-shadow: -2px 0 4px hsl(100,100%,40%), 0 2px 4px hsl(100,100%,40%), 2px 0 4px hsl(100,100%,40%), 0 -2px 4px hsl(100,100%,40%);
 }
 
 #textchat .inlinerollresult.fullfail {
-	border: 2px solid hsl(0, 79%, 39%) !important;
+color: hsl(0,100%,80%) !important;
+text-shadow: -2px 0 4px hsl(0,100%,40%), 0 2px 4px hsl(0,100%,40%), 2px 0 4px hsl(0,100%,40%), 0 -2px 4px hsl(0,100%,40%);
 }
 
 div.dd-content {
-	color:hsl(0,0%,75%) !important;
+color:hsl(40,100%,85%)!important;
 }
 
 div.dd-content:hover {
-	background-color:hsl(0,0%,40%) !important;
+	background-color:#0A1117 !important;;
 }
 
 [class=\'sheet-row\'] {
@@ -429,25 +502,12 @@ li.ui-tabs-active.ui-state-active > a {
 	color:hsl(0,0%,96%) !important;
 }
 
-.dd-item.character > div.dd-content > .name {
-	color:hsl(214,100%,79%) !important;
-}
-
-.dd-item.handout .dd-content > .name {
-	color:hsl(214,100%,79%) !important
-}
-
 .sheet-container {
-	background-color:hsl(0,0%,10%) !important;
-
+	background-color: transparent !important;
 }
 
 .sheet-desc {
 	color:hsl(0,0%,75%) !important;
-}
-
-.sheet-header {
-	color:hsl(0,0%,100%) !important;
 }
 
 .sheet-rolltemplate-dmg {
@@ -816,7 +876,7 @@ input[name=\attr_cp\] {
 .ui-dialog-buttonset button[type='button'],
 .ui-dialog-buttonset > button,
 .r20es-dialog .btn {
-background-color: #1a1a1a !important;
+background-color: none !important;
 color: hsl(0,0%,80%) !important;
 border: 1px solid black !important;
 line-height: 18px;
@@ -859,7 +919,7 @@ background-color: hsl(0,0%,20%) !important;
 }
 
 .charsheet .sheet-death-saving-throws-proficiency-wrapper .sheet-round-checkbox-wrapper span {
-background-color: #1a1a1a;
+background-color: none;
 }
 .dd-handle {
 color: transparent !important;
@@ -903,8 +963,9 @@ position: static !important;
 }
 
 .dd-item.handout .dd-content .redactor_editor > .name {
-	background-color:hsl(0,0%,20%) !important
+	background-color:hsl(40,100%,45%)!important;
 }
+
 li.search-choice {
 background-color: #333 !important;
 background-image: linear-gradient(#444444 20%,#404040 50%,#383838 52%,#3e3e3e 100%) !important;
@@ -961,11 +1022,11 @@ border: 1px solid #000 !important;
 
 #containerdiv,
 .redactor_box, .redactor_editor, .redactor_editor:focus, div[contenteditable], div[contenteditable]:focus {
-	background: #1a1a1a !important;
+	background: transparent !important;
 }
 
 .charactereditor .avatar {
-background-color: #1a1a1a !important;
+background-color: none !important;
 }
 
 .folderroot .dd-content {
@@ -985,7 +1046,7 @@ background-color: transparent !important;
 }
 
 .chosen-container-multi .chosen-choices {
-background-color: #1a1a1a !important;
+background-color: none !important;
 background-image: none !important;
 }
 
@@ -995,7 +1056,7 @@ border: 1px solid #aaaaaa !important;
 
 .charactereditor .avatar,
 .artr__side {
-    background-color: #1a1a1a !important;
+    background-color: none !important;
 }
 
 .artr__item,
@@ -1026,10 +1087,16 @@ background-color: hsl(0,0%,10%) !important;
 }
 
 .charsheet {
-background: #1a1a1a !important;
+background: transparent !important;
 }
+
 [type='roll'] > span, .sheet-attr, .sheet-bold span {
-color: hsl(0,0%,80%) !important
+color: hsl(40,100%,65%) !important;
+font-weight: normal;
+}
+
+.sheet-rolltemplate-bw .sheet-background {
+font-family: Helvetica, Verdana, sans-serif !important;
 }
 
 .charsheet .sheet-pseudo-button-wrapper > span {
@@ -1082,6 +1149,18 @@ background: url('http://imgsrv.roll20.net/?src=i.imgur.com/o20JTtU.png') center 
 background-color: #333 !important;
 }
 
+.sheet-black {
+background: radial-gradient(#000000, #1a1a1a) !important;
+}
+
+.sheet-gray {
+background: radial-gradient(#000000, #7a7a7a) !important;
+}
+
+.sheet-white {
+background: radial-gradient(#7a7a7a, #bababa) !important;
+}
+
 .sheet-hit-dice, .sheet-death-saving-throws, .sheet-rest, .sheet-heart, .sheet-shield, .sheet-initiative, .sheet-speed {
 background-color: #333 !important
 }
@@ -1128,7 +1207,7 @@ button[name^='roll_shaped_coinage'] {
 }
 
 .charsheet .sheet-section-settings .sheet-wrap-box {
-    background-color: #1a1a1a !important;
+    background-color: none !important;
 }
 
 .charsheet .sheet-zebra-rows .sheet-shaped-row:nth-child(2n),
@@ -1141,7 +1220,7 @@ button[name^='roll_shaped_coinage'] {
 }
 
 .charsheet .sheet-classes-select-wrapper {
-    background: #1a1a1a !important;
+    background: transparent !important;
 }
 
 .charsheet .sheet-spells-wrap .sheet-spells > button.btn.ui-draggable[name='roll_shaped_spell_dc'],
@@ -1162,7 +1241,7 @@ background-color: transparent !important;
 }
 
 .charsheet .sheet-section-npc .sheet-npc-content-wrap {
-background:#1a1a1a repeat !important;
+background: transparent repeat !important;
 }
 
 .charsheet .sheet-character-name {
@@ -1244,7 +1323,7 @@ background: url('http://imgsrv.roll20.net/?src=gistcdn.githack.com/RedReign/92c7
 .charsheet .sheet-indented-box-horizontal-expand-bottom, .charsheet .sheet-indented-box-horizontal-expand-top, .charsheet .sheet-indented-box-horizontal-rounded-bottom-expand-bottom, .charsheet .sheet-indented-box-horizontal-rounded-bottom-expand-top, .charsheet .sheet-indented-box-horizontal-rounded-expand-bottom, .charsheet .sheet-indented-box-horizontal-rounded-expand-top,
 .charsheet .sheet-indented-box-horizontal-rounded-bottom-expand-left, .charsheet .sheet-indented-box-horizontal-rounded-bottom-expand-right, .charsheet .sheet-indented-box-horizontal-rounded-expand-left, .charsheet .sheet-indented-box-horizontal-rounded-expand-right,
 .charsheet .sheet-indented-box-horizontal-expand-left, .charsheet .sheet-indented-box-horizontal-expand-right {
-background-color: #1a1a1a !important;
+background-color: none !important;
 }
 
 .charsheet .sheet-boring-box-top-left, .charsheet .sheet-boring-box-top-right,
@@ -1254,7 +1333,7 @@ background: url('http://imgsrv.roll20.net/?src=gistcdn.githack.com/RedReign/fab3
 
 .charsheet .sheet-boring-box-expand-bottom, .charsheet .sheet-boring-box-expand-top,
 .sheet-rolltemplate-5e-shaped .sheet-boring-box-expand-bottom, .sheet-rolltemplate-5e-shaped .sheet-boring-box-expand-top {
-background: #1a1a1a url('http://imgsrv.roll20.net/?src=gistcdn.githack.com/RedReign/a63fee182682ed9f41a8e35954cbd35f/raw/cdb0c1a5947549633aa106df9015b9a50e488698/boringBoxTopBottomExpandWhite.svg') repeat-x !important;
+background: transparent url('http://imgsrv.roll20.net/?src=gistcdn.githack.com/RedReign/a63fee182682ed9f41a8e35954cbd35f/raw/cdb0c1a5947549633aa106df9015b9a50e488698/boringBoxTopBottomExpandWhite.svg') repeat-x !important;
 }
 
 .charsheet .sheet-boring-box-expand-left, .charsheet .sheet-boring-box-expand-right,
@@ -1297,12 +1376,12 @@ background: url('http://imgsrv.roll20.net/?src=gistcdn.githack.com/RedReign/7ddb
 
 .charsheet .sheet-indented-box-expand-bottom, .charsheet .sheet-indented-box-expand-top,
 .charsheet .sheet-max-hp-wrapper, .charsheet .sheet-temp-hp-wrapper {
-background-color: #1a1a1a !important;
+background-color: none !important;
 }
 
 .charsheet .sheet-indented-box-expand-left, .charsheet .sheet-indented-box-expand-right, .charsheet .sheet-box-middle,
 .sheet-rolltemplate-5e-shaped .sheet-box-middle {
-    background-color: #1a1a1a !important;
+    background-color: none !important;
 }
 
 .sheet-inspiration-left, .sheet-inspiration-right, .sheet-proficiency-bonus button, .sheet-shaped-version > button {
@@ -1313,7 +1392,17 @@ background-color: #1a1a1a !important;
     text-shadow: 1px 1px #1a1a1a;
 }
 
+.charsheet table.sheet-page3 select, .charsheet table.sheet-weapons select, .charsheet table.sheet-page2 select.sheet-underline, .charsheet .sheet-skills select.sheet-underline {
+font-family: Georgia, serif !important;
+}
+
 /* OGL TIME LET'S GO */
+
+div.sheet-licensecontainer .sheet-npc_toggle[value="1"] ~ .sheet-npc .sheet-stat-block,
+div.sheet-licensecontainer .sheet-npc_toggle[value="1"] ~ .sheet-npc .sheet-actions,
+div.sheet-licensecontainer .sheet-npc_toggle[value="1"] + .sheet-npcspellcastingflag[value="1"] ~ .sheet-pc .sheet-page.sheet-spells .sheet-body .sheet-col {
+    background: transparent !important;
+}
 
 div.sheet-licensecontainer .sheet-container .sheet-body button.btn.ui-draggable {
     color: hsl(44,63%,63%) !important;
@@ -1537,7 +1626,7 @@ padding-left: 250px; /* Equal to width of new image */
 
 .charsheet .sheet-attr-mod,
 .charsheet .sheet-insp-prof-container .sheet-value {
-background-color: #1a1a1a !important;
+background-color: none !important;
 }
 
 .charsheet .sheet-insp-prof-container .sheet-value input[type='checkbox'] ~ span {
@@ -1667,6 +1756,112 @@ div.sheet-rolltemplate-desc div.sheet-desc.sheet-info .sheet-bottom {
     background-color: hsl(0,0%,10%) !important;
     color: hsl(0,0%,75%) !important;
 }
+
+.sheet-showhide {
+    background-color: #000000 !important;
+}
+
+.charsheet {
+    font-family: Helvetica, Verdana, sans-serif !important;
+}
+
+.charsheet input.sheet-long, .charsheet table.sheet-weapons input[type=text].sheet-long{
+    font-family: Helvetica, Verdana, sans-serif !important;
+}
+
+textarea, select, input, .ui-dialog .btn:not(.sheet-wrapper-button), #textchat-input .btn, #rightsidebar .btn, .tokenactions .btn, .ui-dialog-content .ui-dialog-buttonset > button
+{
+border-color:#41827d!important;
+background-color: #0A1117!important;
+}
+
+[name=\attr_skill\]  {
+font-size:20px !important;
+}
+
+.charsheet input.sheet-long, .charsheet table.sheet-weapons input[type=text].sheet-long{
+width: 80px;
+font-size:0.9em;
+color: hsl(40,100%,65%)!important;
+}
+
+.btn, .btn.btn-default{
+color:hsl(40,100%,65%)!important;
+}
+
+.charsheet input[type=checkbox]{
+-webkit-appearance:checkbox!important;
+-moz-appearance:checkbox!important;
+appearance:checkbox!important;
+}
+
+.charsheet .sheet-box input[type="checkbox"] ~ .sheet-checkbox:before {
+color:hsl(40,100%,65%)!important;
+}
+
+.dd-item.character > div.dd-content > .name {
+color:hsl(40,100%,85%)!important;
+font-weight:normal;
+font-style:italic;
+}
+
+.dd-item.handout .dd-content > .name {
+color:hsl(40,100%,65%)!important;
+font-weight:normal;
+}
+
+.ui-dialog .ui-dialog-titlebar {
+color:hsl(40,100%,65%)!important;
+}
+
+.sheet-diceandob {
+background: #0A1117 !important;
+background-color:#0A1117;
+}
+
+.sheet-rolltemplate-bw .sheet-routine {
+background-color:hsl(100,100%,85%) !important;
+}
+.sheet-rolltemplate-bw .sheet-difficult {
+background-color:hsl(40,100%,75%) !important;
+}
+.sheet-rolltemplate-bw .sheet-challenging {
+background-color:hsl(0,100%,85%) !important;
+}
+.sheet-rolltemplate-bw .sheet-resultcontainer {
+color: #000000;
+}
+.sheet-rolltemplate-bw .sheet-green {
+background-color:hsl(100,100%,70%) !important;
+}
+.sheet-rolltemplate-bw .sheet-red {
+background-color:hsl(0,100%,70%) !important;
+}
+.sheet-rolltemplate-bw .sheet-num {
+width: 20px !important;
+}
+
+.nav-tabs>li {
+color: hsl(40,100%,85%) !important;
+background-color: ##0a1117!important;
+}
+
+.nav-tabs>li.active>a, .nav-tabs>li.active>a:hover, .nav-tabs>li.active>a:focus {
+color:hsl(40,100%,65%)!important;
+border-top-color:#41827d!important;
+border-left-color:#41827d!important;
+border-right-color:#41827d!important;
+background-color: #0A1117!important;
+}
+
+.charsheet table.sheet-weapons {
+color: #fff !important;
+}
+
+.charsheet input[type="radio"].sheet-normal + span::before {
+background: radial-gradient(#7a7a7a, #1a1a1a) !important;
+}
+
 `;
 if (typeof GM_addStyle != "undefined") {
 	GM_addStyle(css);
@@ -1688,6 +1883,9 @@ if (typeof GM_addStyle != "undefined") {
 }
 })();
 (function(){
+document.body.innerHTML = document.body.innerHTML.replace('#E8E8E8','#000000');
+})();
+    (function(){
 const el = document.createElement("link");
 el.rel = "stylesheet";
 el.href = "/css/licensed5ednd.css";
