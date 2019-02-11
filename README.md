@@ -11,7 +11,7 @@ Also compatible with the VTT Enhancement Suite (formerly Roll20 Enhancement Suit
 - Enjoy!
 
 ## Gallery
-![character-stats](screen-char.png)
+![character-stats](/screen-char.PNG)
 
 ## Acknowledgements
 **Thanks to:**
