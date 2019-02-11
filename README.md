@@ -1,6 +1,5 @@
 # Roll20-Dark-Theme
-Dark theme for Roll20. Fully compatible with the base editor as well as the 5e Shaped and OGL sheets.
-Also compatible with the VTT Enhancement Suite (formerly Roll20 Enhancement Suite) extension!
+Dark theme for Roll20, based on [RedReign](https://github.com/RedReign/)'s work and optimized for Burning Wheel.
 
 ## Installation:
 - Install the [Tampermonkey](https://tampermonkey.net/) extension on your browser.
