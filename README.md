@@ -6,17 +6,17 @@ Also compatible with the VTT Enhancement Suite (formerly Roll20 Enhancement Suit
 - Install the [Tampermonkey](https://tampermonkey.net/) extension on your browser.
 
   (Greasemonkey and other userscript extensions may work, but are not currently supported.)
-- [Download and open the userscript in your browser](https://openuserjs.org/install/RedReign/Roll20_Dark.user.js).
+- [Download and open the userscript in your browser](https://openuserjs.org/install/Mandrilletje/Roll20_Dark_for_BW.user.js).
 
 - Enjoy!
 
 ## Gallery
-![Tabletop](/media/stormy-fullscreen.png)
-![PC OGL D&D 5e](/media/stormy-pc-sheet.png)
-![NPC OGL D&D 5e](/media/stormy-npc-sheet.png)
+![character-stats](screen-char.png)
 
 ## Acknowledgements
 **Thanks to:**
+
+[RedReign](https://github.com/RedReign/)!
 
 [SSStormy](https://github.com/SSStormy/) and [TheGiddyLimit](https://github.com/TheGiddyLimit/) for their encouragement, guidance, and endless wisdom.
 
