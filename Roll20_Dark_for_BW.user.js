@@ -291,7 +291,7 @@ textarea,select,input,
 	 border-color:black!important;
 }
 
-table, td {
+.sheet-showhide table, .sheet-showhide td {
 background-color: #1a1a1a !important;
 }
 
@@ -451,17 +451,18 @@ hr {
 }
 
 #textchat .inlinerollresult.importantroll {
-    text-shadow: -2px 0 4px hsl(40,100%,45%), 0 2px 4px hsl(40,100%,45%), 2px 0 4px hsl(40,100%,45%), 0 -2px 4px hsl(40,100%,45%);
+color: hsl(200,100%,80%) !important;
+    text-shadow: -2px 0 2px hsl(200,100%,25%),2px 0 2px hsl(200,100%,25%),0 2px 2px hsl(200,100%,25%), 0 -2px 2px hsl(200,100%,25%);
 }
 
 #textchat .inlinerollresult.fullcrit {
-color: hsl(100,100%,80%) !important;
-    text-shadow: -2px 0 4px hsl(100,100%,40%), 0 2px 4px hsl(100,100%,40%), 2px 0 4px hsl(100,100%,40%), 0 -2px 4px hsl(100,100%,40%);
+color: hsl(120,100%,25%) !important;
+    text-shadow: 0px 0 6px hsl(100,100%,75%);
 }
 
 #textchat .inlinerollresult.fullfail {
-color: hsl(0,100%,80%) !important;
-text-shadow: -2px 0 4px hsl(0,100%,40%), 0 2px 4px hsl(0,100%,40%), 2px 0 4px hsl(0,100%,40%), 0 -2px 4px hsl(0,100%,40%);
+color: hsl(0,100%,45%) !important;
+text-shadow: 0px 0 6px hsl(0,100%,70%);
 }
 
 div.dd-content {
@@ -1006,6 +1007,16 @@ box-shadow: 0 3px 3px #222 !important;
 color: inherit !important;
 }
 
+.ui-dialog-buttonset .ui-button:nth-child(2), .ui-dialog-buttonset .ui-button:nth-child(3), .ui-dialog-buttonset .ui-button:nth-child(4), .ui-dialog-buttonset .ui-button:nth-child(5), .ui-dialog-buttonset .ui-button:nth-child(6) {
+background-color: #1a1a1a!important;
+}
+
+.ui-dialog-buttonpane .ui-dialog-buttonset .ui-button{
+border-color:#41827d!important;
+background-color: #0A1117!important;
+color:hsl(40,100%,65%)!important;
+}
+
 .note-editor .panel-default > .panel-heading {
 background-color: #2a2a2a !important;
 border-color: #111 !important;
@@ -1022,7 +1033,7 @@ border: 1px solid #000 !important;
 
 #containerdiv,
 .redactor_box, .redactor_editor, .redactor_editor:focus, div[contenteditable], div[contenteditable]:focus {
-	background: transparent !important;
+	background: #1a1a1a !important;
 }
 
 .charactereditor .avatar {
@@ -1158,7 +1169,7 @@ background: radial-gradient(#000000, #7a7a7a) !important;
 }
 
 .sheet-white {
-background: radial-gradient(#7a7a7a, #bababa) !important;
+background: radial-gradient(#000000, #7400d4) !important;
 }
 
 .sheet-hit-dice, .sheet-death-saving-throws, .sheet-rest, .sheet-heart, .sheet-shield, .sheet-initiative, .sheet-speed {
@@ -1860,6 +1871,27 @@ color: #fff !important;
 
 .charsheet input[type="radio"].sheet-normal + span::before {
 background: radial-gradient(#7a7a7a, #1a1a1a) !important;
+}
+
+.ui-dialog-buttonset{
+border-color:#41827d!important;
+background-color: #0A1117!important;
+color:hsl(40,100%,65%)!important;
+}
+.ui-dialog-buttonset button[type='button'], .ui-dialog-buttonset > button, .r20es-dialog .btn{
+border-color:#41827d!important;
+background-color: #0A1117!important;
+color:hsl(40,100%,65%)!important;
+}
+
+.btn {
+border-color:#41827d!important;
+background-color: #0A1117!important;
+color:hsl(40,100%,65%)!important;
+}
+
+.sheet-page3 td{
+background-color: #1a1a1a !important;
 }
 
 `;
