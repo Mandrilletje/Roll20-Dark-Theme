@@ -1,12 +1,12 @@
 // ==UserScript==
 // @name          Roll20 Dark for BW
-// @namespace     https://openuserjs.org/scripts/RedReign/Roll20_Dark
+// @namespace     https://openuserjs.org/scripts/Mandrilletje/Roll20_Dark_for_BW
 // @description	  A dark theme for Roll20.net.
 // @author        RedReign & Mandrilletje
 // @include       https://app.roll20.net/editor*
 // @include       https://app.roll20.net/campaigns/chatarchive*
 // @run-at        document-start
-// @version       2019.2.11.1
+// @version       2019.2.12.1
 // @license       GPL-3.0-or-later
 // ==/UserScript==
 (function() {var css =`
@@ -451,18 +451,18 @@ hr {
 }
 
 #textchat .inlinerollresult.importantroll {
-color: hsl(200,100%,80%) !important;
-    text-shadow: -2px 0 2px hsl(200,100%,25%),2px 0 2px hsl(200,100%,25%),0 2px 2px hsl(200,100%,25%), 0 -2px 2px hsl(200,100%,25%);
+color: hsl(220,100%,80%) !important;
+    text-shadow: 0 0 10px hsl(220,100%,65%);
 }
 
 #textchat .inlinerollresult.fullcrit {
-color: hsl(120,100%,25%) !important;
-    text-shadow: 0px 0 6px hsl(100,100%,75%);
+color: hsl(100,50%,50%) !important;
+    text-shadow: 0 0 10px hsl(100,50%,50%);
 }
 
 #textchat .inlinerollresult.fullfail {
-color: hsl(0,100%,45%) !important;
-text-shadow: 0px 0 6px hsl(0,100%,70%);
+color: hsl(0,100%,50%) !important;
+text-shadow: 0 0 10px hsl(0,100%,50%);
 }
 
 div.dd-content {
@@ -1843,10 +1843,13 @@ background-color:hsl(0,100%,85%) !important;
 color: #000000;
 }
 .sheet-rolltemplate-bw .sheet-green {
-background-color:hsl(100,100%,70%) !important;
+background: radial-gradient(hsl(100,60%,20%),hsl(100,60%,25%)) !important;
+color: hsl(100,100%,85%);
 }
+
 .sheet-rolltemplate-bw .sheet-red {
-background-color:hsl(0,100%,70%) !important;
+background: radial-gradient(hsl(0,80%,30%),hsl(0,100%,30%)) !important;
+color: hsl(0,100%,85%);
 }
 .sheet-rolltemplate-bw .sheet-num {
 width: 20px !important;
